@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
 	def index
-		@content_first = 'This is some sample text for our awesome new ruby blog.';
-		@content_second = 'This is more sample text for our awesome new ruby blog.'
+		@post = Post.all;
 	end
 
 	def show
-
+		@post = Post.find(params[:id])
 	end
 
 	def create
@@ -27,4 +26,9 @@ class PostsController < ApplicationController
 	def destroy
 
 	end
+
+	# private
+	# def post_params
+	# 	params.require(:posts).permit(:title, :body, :category_id, :author_id);
+	# end
 end
