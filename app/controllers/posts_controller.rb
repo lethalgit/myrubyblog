@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id]);
+		@category = Category.find(@post.category_id);
 	end
 
 	def edit
